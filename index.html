@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Desenhos para Crianças – Fazendinha & Savana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Livro de colorir digital com 100 desenhos de fazendinha e savana para imprimir e pintar quantas vezes quiser. Ideal para pais, professores e profissionais que atendem crianças.">
+  <style>
+    :root {
+      --azul: #1F3B7A;
+      --azul-claro: #3B6CF6;
+      --amarelo: #FFC94A;
+      --coral: #FF7B87;
+      --verde: #4CC9A6;
+      --fundo-claro: #FFFDF7;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin:0; padding:0;
+      line-height:1.6;
+      color: var(--azul);
+      background: var(--fundo-claro);
+    }
+    a { color: inherit; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, #FFEFD5, #FFF7EB);
+      padding: 24px 0 56px 0;
+      border-bottom: 4px solid rgba(0,0,0,0.03);
+    }
+
+    .topbar {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom: 24px;
+    }
+    .topbar-logo {
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .topbar-logo img {
+      height:56px;
+    }
+    .topbar-logo span {
+      font-weight:700;
+      font-size: 1.1rem;
+      color: var(--azul);
+    }
+
+    .hero-grid {
+      display:grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap:32px;
+      align-items:center;
+    }
+    @media (max-width: 800px) {
+      .hero-grid { grid-template-columns: 1fr; text-align:center; }
+      .hero-visual { order:-1; }
+    }
+
+    h1 {
+      font-family: "Fredoka", "Baloo 2", system-ui, sans-serif;
+      font-size: 2.1rem;
+      margin: 0 0 12px 0;
+      color: var(--azul);
+    }
+    h2 {
+      font-family: "Fredoka", "Baloo 2", system-ui, sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: var(--azul);
+    }
+    h3 {
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--azul);
+    }
+
+    .hero p.sub {
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .pill-list {
+      list-style:none;
+      padding:0;
+      margin:0 0 18px 0;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .pill-list li {
+      background:#ffffffb5;
+      border-radius:999px;
+      padding:6px 12px;
+      font-size:0.9rem;
+      border:1px solid rgba(0,0,0,0.04);
+    }
+
+    .hero-price {
+      font-size: 1rem;
+      margin: 10px 0 4px 0;
+    }
+    .hero-price .old-price {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+    .hero-price .new-price {
+      display:block;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--coral);
+      margin-top:4px;
+    }
+    .hero-badge {
+      display:inline-block;
+      font-size:0.8rem;
+      margin-top:4px;
+      padding:4px 10px;
+      border-radius:999px;
+      background: var(--azul);
+      color:#fff;
+    }
+
+    .btn-primary {
+      display:inline-block;
+      padding: 14px 26px;
+      background: var(--coral);
+      color:#fff;
+      text-decoration:none;
+      border-radius:999px;
+      font-weight:700;
+      font-size:1rem;
+      margin-top:16px;
+      box-shadow:0 6px 14px rgba(0,0,0,0.15);
+      transition: transform .1s ease, box-shadow .1s ease, background .1s ease;
+    }
+    .btn-primary:hover {
+      background:#ff6b6b;
+      transform: translateY(-1px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.18);
+    }
+
+    .hero-visual {
+      text-align:center;
+    }
+    .hero-visual img {
+      max-width: 260px;
+      width:100%;
+      height:auto;
+      display:block;
+      margin:0 auto 12px auto;
+    }
+    .hero-visual-note {
+      font-size:0.8rem;
+      color:#555;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+    section.alt {
+      background:#ffffff;
+    }
+
+    .grid-2 {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:24px;
+      align-items:flex-start;
+    }
+
+    ul { padding-left: 20px; }
+    li { margin-bottom:6px; }
+
+    .tag {
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      background: rgba(59,108,246,0.08);
+      color: var(--azul-claro);
+      margin-bottom:4px;
+    }
+
+    .badge-logo-row {
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      align-items:center;
+      margin-top: 16px;
+    }
+    .badge-logo-row img {
+      height:60px;
+    }
+    .badge-logo-row span {
+      font-size:0.9rem;
+      color:#555;
+    }
+
+    .faq-item { margin-bottom: 16px; }
+    .faq-item strong { display:block; margin-bottom:4px; }
+
+    .neon-section {
+      background:#050816;
+      color:#f4f6ff;
+      text-align:center;
+      padding:40px 0 46px 0;
+    }
+    .neon-section img {
+      max-width: 220px;
+      height:auto;
+      margin-bottom:10px;
+    }
+    .neon-section p {
+      max-width:540px;
+      margin:0 auto;
+      font-size:0.95rem;
+      opacity:0.9;
+    }
+
+    footer {
+      text-align:center;
+      font-size:0.85rem;
+      padding:20px 0;
+      background:#ffffff;
+      border-top:1px solid rgba(0,0,0,0.03);
+    }
+    footer img {
+      height:32px;
+      vertical-align:middle;
+      margin-right:6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <!-- Topbar com LOGO A (lápis + estrelas) -->
+      <div class="topbar">
+        <div class="topbar-logo">
+          <img src="logo-principal-lapis-estrelas.png" alt="Logotipo Desenhos para Crianças">
+          <span>Desenhos para Crianças</span>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <span class="tag">Livro de Colorir Digital</span>
+          <h1>Fazendinha &amp; Savana – 100 desenhos para imprimir e pintar quantas vezes quiser</h1>
+          <p class="sub">
+            Um livrinho digital pronto para baixar, imprimir e usar com as crianças em casa, na escola ou no consultório. 
+            Menos telas, mais imaginação e momentos em família.
+          </p>
+
+          <ul class="pill-list">
+            <li>✅ 100 páginas para colorir</li>
+            <li>✅ Arquivo digital em PDF</li>
+            <li>✅ Imprima quantas vezes quiser</li>
+            <li>✅ Ideal para pais, professores e profissionais</li>
+          </ul>
+
+          <div class="hero-price">
+            De <span class="old-price">R$ 49,90</span>
+            <span class="new-price">R$ 29,90</span>
+            <span>Pagamento único · Acesso imediato · Produto digital</span>
+          </div>
+          <div class="hero-badge">Oferta especial de lançamento</div>
+
+          <a href="https://pay.kiwify.com.br/sajimYo" class="btn-primary">QUERO O LIVRINHO POR R$ 29,90</a>
+        </div>
+
+        <!-- Lado direito: LOGO C (arco-íris) como visual hero -->
+        <div class="hero-visual">
+          <img src="logo-arco-iris.png" alt="Marca Desenhos para Crianças com lápis e arco-íris">
+          <p class="hero-visual-note">
+            <strong>Desenhos para Crianças – Fazendinha &amp; Savana</strong><br>
+            Seu livro de colorir pronto para usar o ano inteiro.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PARA QUEM É -->
+  <section class="alt">
+    <div class="container">
+      <h2>Para quem é o “Desenhos para Crianças – Fazendinha &amp; Savana”?</h2>
+      <p>Perfeito para quem precisa de atividades simples, prontas e divertidas para crianças de 3 a 9 anos.</p>
+      <ul>
+        <li>👨‍👩‍👧 Pais e mães que querem afastar os filhos um pouco do celular, tablet e TV.</li>
+        <li>👩‍🏫 Professoras e educadores da educação infantil que precisam de material pronto.</li>
+        <li>🩺 Profissionais da área infantil que desejam deixar o atendimento mais leve e acolhedor.</li>
+        <li>🎉 Organizadores de festas e recreações infantis que buscam kits de colorir para lembrancinhas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- O QUE RECEBE + LOGO D (lápis com rostinho) como mascote -->
+  <section>
+    <div class="container">
+      <h2>O que você recebe na prática</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Kit principal</h3>
+          <ul>
+            <li>📄 1 PDF com 100 páginas para colorir em formato A4.</li>
+            <li>🖼️ Desenhos em estilo infantil, traço grosso, pensados para impressão.</li>
+            <li>📚 Organização por temas: Fazendinha Kids, Fazendinha Adultos, Savana Kids, Savana Adultos e Extras.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Bônus incluídos</h3>
+          <ul>
+            <li>🎁 Capa para colorir e personalizar.</li>
+            <li>🏅 Certificado “Pequeno Artista”.</li>
+            <li>💡 Ideias de brincadeiras e atividades com os desenhos.</li>
+            <li>📎 Sugestões de uso em sala de aula para professores.</li>
+          </ul>
+
+          <div class="badge-logo-row">
+            <img src="logo-lapis-rosto.png" alt="Mascote Desenhos para Crianças">
+            <span>Nosso mascote acompanha o rodapé das páginas, deixando o livrinho ainda mais fofo.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE VALE A PENA -->
+  <section class="alt">
+    <div class="container">
+      <h2>Por que esse livrinho vale a pena?</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Sem o livrinho</h3>
+          <ul>
+            <li>❌ Você perde tempo procurando imagens soltas na internet.</li>
+            <li>❌ Muitos desenhos têm baixa qualidade ou tamanho errado.</li>
+            <li>❌ Impressões desalinhadas e páginas sem padrão.</li>
+            <li>❌ Nem sempre fica claro se o uso das imagens é permitido.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Com “Desenhos para Crianças”</h3>
+          <ul>
+            <li>✅ 100 desenhos organizados em um único arquivo.</li>
+            <li>✅ Qualidade pensada para impressão em A4.</li>
+            <li>✅ Estilo padronizado – livrinho bonito e coerente.</li>
+            <li>✅ Você imprime quantas vezes quiser, o ano todo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA + OFERTA -->
+  <section id="comprar">
+    <div class="container">
+      <h2>Como funciona</h2>
+      <ol>
+        <li>Clique no botão abaixo e faça o pagamento em ambiente 100% seguro.</li>
+        <li>Aguarde a confirmação – é rapidinho.</li>
+        <li>Receba o link de acesso no seu e-mail.</li>
+        <li>Baixe o PDF e imprima quantas vezes quiser.</li>
+      </ol>
+
+      <h3>Oferta especial de lançamento</h3>
+      <p>O valor real desse kit completo é de <strong>R$ 49,90</strong>, mas hoje você pode garantir tudo por apenas:</p>
+      <p style="font-size:1.7rem; font-weight:800; color:var(--coral);">R$ 29,90</p>
+      <p>Pagamento único · Acesso imediato · Produto digital</p>
+      <a href="https://pay.kiwify.com.br/sajimYo" class="btn-primary">GARANTIR MEU ACESSO POR R$ 29,90</a>
+    </div>
+  </section>
+
+  <!-- SEÇÃO NEON COM LOGO B (modo digital) -->
+  <section class="neon-section">
+    <img src="logo-neon.png" alt="Versão digital do logotipo Desenhos para Crianças">
+    <p>
+      A mesma marca que está na capa do livrinho também aparece nos materiais digitais,
+      garantindo que pais, professores e crianças reconheçam o “Desenhos para Crianças” em qualquer lugar.
+    </p>
+  </section>
+
+  <!-- GARANTIA -->
+  <section>
+    <div class="container">
+      <h2>Garantia simples e direta</h2>
+      <p>Você tem <strong>7 dias</strong> para acessar o material, baixar, ver os desenhos e decidir se serve para você.</p>
+      <p>Se, por qualquer motivo, não gostar do conteúdo, achar que não é o que esperava ou simplesmente se arrepender, é só pedir o reembolso dentro desse prazo.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt">
+    <div class="container">
+      <h2>Perguntas frequentes</h2>
+
+      <div class="faq-item">
+        <strong>O livrinho é físico ou digital?</strong>
+        <span>O “Desenhos para Crianças” é um produto digital. Você recebe um arquivo em PDF com 100 desenhos para baixar e imprimir quantas vezes quiser.</span>
+      </div>
+
+      <div class="faq-item">
+        <strong>Como vou receber o material?</strong>
+        <span>Após a confirmação do pagamento, você recebe um e-mail com o link para baixar o PDF e os bônus.</span>
+      </div>
+
+      <div class="faq-item">
+        <strong>Posso imprimir quantas vezes quiser?</strong>
+        <span>Sim. Você pode imprimir quantas cópias quiser para uso pessoal, familiar, escolar ou profissional com crianças.</span>
+      </div>
+
+      <div class="faq-item">
+        <strong>Preciso de impressora colorida?</strong>
+        <span>Não. Os desenhos são em preto e branco. A graça é a criança colorir do jeito dela.</span>
+      </div>
+
+      <div class="faq-item">
+        <strong>É indicado para qual idade?</strong>
+        <span>Recomendado para crianças de aproximadamente 3 a 9 anos.</span>
+      </div>
+
+      <div class="faq-item">
+        <strong>Posso usar com meus alunos em sala de aula?</strong>
+        <span>Sim! O material é perfeito para professores e escolas.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FECHAMENTO -->
+  <section>
+    <div class="container" style="text-align:center;">
+      <h2>Pronto para ver as crianças se divertindo longe das telas?</h2>
+      <p>Por menos do que o valor de um livro de colorir na papelaria, você recebe 100 desenhos organizados em um só arquivo, prontos para imprimir e usar com as crianças.</p>
+      <a href="https://pay.kiwify.com.br/sajimYo" class="btn-primary">SIM, QUERO O DESENHOS PARA CRIANÇAS</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>
+        <img src="logo-lapis-rosto-mini.png" alt="Desenhos para Crianças">
+        Desenhos para Crianças – Fazendinha &amp; Savana · Produto digital · Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
